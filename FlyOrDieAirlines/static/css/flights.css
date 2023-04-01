@@ -1,0 +1,181 @@
+/*m {*/
+/*  font-family: 'League Spartan', sans-serif;*/
+/*}*/
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif, 'League Spartan';
+  font-weight: 500;
+  line-height: 1.2;
+  color: #5a5a5a;
+}
+
+#slogan {
+  font-family: 'League Spartan';
+  font-weight: 700;
+  padding: 20px;
+}
+
+#regi_log {
+  background-color: hsl(180, 17%, 95%);
+}
+
+.search {
+  padding: 40px;
+  background-color: #5a5a5a;
+}
+
+#home_container {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#plane_home {
+  margin-right: auto;
+  margin-left: auto;
+  background: url("clouds_gif.gif");
+  background-size: cover;
+  border-radius: 250px;
+}
+
+#contact {
+  background-color: hsl(225, 50%, 48%);
+  border-color: hsl(225, 50%, 48%);
+  border-radius: 200px;
+}
+
+#search_link {
+  padding-right: 20px;
+}
+
+#about_link {
+  padding-right: 20px;
+}
+
+#info {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+#navcol-2 {
+  padding-right: 50px;
+}
+
+#div_search {
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#radio_return-trip {
+  float: left;
+  padding-right: 20px;
+}
+
+#radio_one-way {
+  float: left;
+}
+
+#radio-return {
+  float: left;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#radio-one {
+  float: left;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#radio_form {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  padding-top: 65px;
+}
+
+#navbar_search {
+  clear: both;
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: hsl(225, 50%, 48%);
+}
+
+#div_radio {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 65px;
+  padding-bottom: 40px;
+  max-width: 1000px;
+}
+
+#search_btn {
+  background-color: hsl(180, 17%, 95%);
+  border-color: hsl(180, 17%, 95%);
+  border-radius: 200px;
+}
+
+#from_drop {
+  padding-right: 200px;
+  font-size: 12px;
+}
+
+#to_drop {
+  padding-right: 200px;
+  font-size: 12px;
+}
+
+.dropdown {
+  padding-right: 20px;
+}
+
+#search_container {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+#navcol-3 {
+  padding-left: 40px;
+}
+
+#add {
+  text-align: center;
+  padding: 40px;
+  background-image: url("add.png");
+  background-size: cover;
+}
+
+#add_placholder {
+  text-align: left;
+  padding-left: 100px;
+}
+
+.text-center {
+  text-align: center!important;
+  color: black;
+}
+
+div.social-links {
+  margin-top: 20px;
+  color: #fff;
+  padding-top: 20px;
+}
+
+#logo_text {
+  color: black;
+  font: normal 36px Cookie, cursive;
+  padding-left: 50px;
+}
+
