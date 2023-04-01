@@ -6,7 +6,8 @@ class Airport(models.Model):
     airport_name = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     country = models.CharField(max_length=30)
-
+    def __str__(self):
+        return self.airport_name
 class Airline(models.Model):
     airline_code = models.CharField(max_length=3, primary_key=True)
     airline_name = models.CharField(max_length=100)
@@ -16,6 +17,9 @@ class Aircraft(models.Model):
     aircraft_code = models.CharField(max_length=3, primary_key=True)
     aircraft_type = models.CharField(max_length=100)
     max_capacity = models.IntegerField()
+
+    def __str__(self):
+        return self.aircraft_code + " " +  self.aircraft_code
 
 class Flight(models.Model):
     flight_id = models.AutoField(primary_key=True)
