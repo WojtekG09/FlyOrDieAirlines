@@ -42,6 +42,17 @@ p {
   border-radius: 200px;
 }
 
+.btn:hover {
+  color: var(--bs-btn-hover-color);
+  background-color: hsl(225, 50%, 38%);
+  border-color: hsl(225, 50%, 38%);
+}
+.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active {
+  color: var(--bs-btn-active-color);
+  background-color: hsl(225, 50%, 28%);
+  border-color: hsl(225, 50%, 28%);
+}
+
 .text-policy{
   padding-top: 40px;
 }
