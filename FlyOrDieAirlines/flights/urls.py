@@ -7,5 +7,6 @@ app_name = "flights"
 urlpatterns = [
   #  path("", views.homepage, name="homepage"),
     path("", views.home, name = 'home' ),
-    path("login.html", views.login_page)
+    path("login.html", views.login_page),
+    path("register.html", views.register_page)
 ]
