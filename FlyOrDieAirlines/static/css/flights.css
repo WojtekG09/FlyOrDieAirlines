@@ -65,15 +65,6 @@
   padding-right: 50px;
 }
 
-#radio_return-trip {
-  float: left;
-  padding-right: 20px;
-}
-
-#radio_one-way {
-  float: left;
-}
-
 #radio-return {
   float: left;
   padding-right: 50px;
@@ -116,23 +107,10 @@
 }
 
 #search_btn {
-  background-color: hsl(180, 17%, 95%);
-  border-color: hsl(180, 17%, 95%);
+  background-color: rgb(250,189,160);
+  border-color: rgb(250,189,160);
   border-radius: 200px;
-}
-
-#from_drop {
-  padding-right: 200px;
-  font-size: 12px;
-}
-
-#to_drop {
-  padding-right: 200px;
-  font-size: 12px;
-}
-
-.dropdown {
-  padding-right: 20px;
+  color: black;
 }
 
 #search_container {
@@ -140,10 +118,6 @@
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 50px;
-}
-
-#navcol-3 {
-  padding-left: 40px;
 }
 
 #add {
@@ -174,4 +148,29 @@ div.social-links {
   font: normal 36px Cookie, cursive;
   padding-left: 50px;
 }
+
+#select_from_box {
+  font-size: 12px;
+  padding-right: 195px;
+}
+
+#select_to_box {
+  font-size: 12px;
+  padding-right: 195px;
+}
+
+#depature {
+  font-size: 12px;
+  padding-left: 5px;
+  height: 37px;
+  text-align: center;
+}
+
+#arrival {
+  font-size: 12px;
+  padding-left: 5px;
+  height: 37px;
+  text-align: center;
+}
+
 
