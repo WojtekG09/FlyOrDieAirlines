@@ -101,8 +101,13 @@
                     <ul id="select_to" class="nav-item">
                         <select id="select_to_box" class="text-dark bg-light border rounded-pill border-light navbar-text">
                             <option>To</option>
+                                 {% for airport in airports %}
+                            <option value="{{airport.airport_code}}">{{ airport.city }}</option>
+                            {% endfor %}
                         </select>
                     </ul>
+
+
                     <ul id="select_depature" class="nav-item">
                         <input id="depature" class="border rounded-pill border-light d-xxl-flex align-items-xxl-start" type="date" />
                     </ul>
@@ -112,10 +117,44 @@
                     <ul id="nav_search_btn" class="nav-item">
                         <button id="search_btn" class="btn btn-primary" type="button">search</button>
                     </ul>
+<script>
+    var departureAirport = document.getElementById("departure_airport");
+    var arrivalAirport = document.getElementById("arrival_airport");
+
+    departureAirport.addEventListener("change", function() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var choices = JSON.parse(xhr.responseText);
+            arrivalAirport.innerHTML = "";
+            for (var i = 0; i < choices.length; i++) {
+              var option = document.createElement("option");
+              option.text = choices[i].name + " (" + choices[i].code + ")";
+              option.value = choices[i].airport_code;
+              arrivalAirport.add(option);
+            }
+          } else {
+            alert("Error: " + xhr.statusText);
+          }
+        }
+      };
+      xhr.open("GET", "/get_airport_choices/?departure_airport=" + this.value, true);
+      xhr.send();
+    });
+  </script>
+{% endblock %}
+
+
+
                 </div>
             </div>
         </nav>
     </div>
+
+
+
+
     <div id="add">
         <section id = "add_placholder">
     <div class="placeholder bg-light border rounded border-light jumbotron py-5 px-4">
