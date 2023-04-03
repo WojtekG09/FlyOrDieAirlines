@@ -90,14 +90,12 @@
                 <div class="collapse navbar-collapse" id="navcol-3">
                     <ul id="select_from" class="nav-item">
                         <select id="select_from_box" class="text-dark bg-light border rounded-pill border-light navbar-text">
-                            <option>From</option>
-                            <option>Dupa</option>
-<!--                            <option >From</option>-->
-<!--                            {% for airport in airports %}-->
-<!--                            <option>-->
-<!--                                {{ airport.city }}-->
-<!--                            </option>-->
-<!--                            {% endfor %}-->
+                            <option value="" disable hidden selected>From</option>
+
+                            <option >From</option>
+                            {% for airport in airports %}
+                            <option value="{{airport.airport_code}}">{{ airport.city }}</option>
+                            {% endfor %}
                         </select>
                     </ul>
                     <ul id="select_to" class="nav-item">
