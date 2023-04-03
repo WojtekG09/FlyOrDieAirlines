@@ -105,7 +105,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navcol-3">
                     <ul id="select_from" class="nav-item">
-                        <select id="select_from_box" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)">
+                        <select id="select_from_box" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
                             <option value="" disable hidden selected>From</option>
 <!--                            <option>From</option>-->
                             {% for airport in airports %}
@@ -116,7 +116,7 @@
                         </select>
                     </ul>
                     <ul id="select_to" class="nav-item">
-                        <select id="select_to_box" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)">
+                        <select id="select_to_box" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
                             <option value="" disble selected hidden>To</option>
                             {% for airport in airports %}
                             <option value="{{airport.airport_code}}">
@@ -213,17 +213,4 @@
     </footer>
     <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-<!--    <script type="text/javascript">-->
-<!--        getSelectValue()-->
-<!--        function getSelectValue()-->
-<!--        {-->
-<!--            let choice = document.getElementById('select_from_box').value-->
-<!--            document.getElementById('select_to_box').hidden-->
-            // console.log(answer.value);
-            // if (answer.value = select_to_box.value).hide()
-            // {
-            //     $('#select_to_box option[value='"+select_from_box+"']').hide();
-            // }
-    <!--    }-->
-    <!--</script>-->
 </html>
