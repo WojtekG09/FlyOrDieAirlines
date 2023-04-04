@@ -173,4 +173,11 @@ div.social-links {
   text-align: center;
 }
 
+#login_btn {
+  padding-left: 70px;
+  padding-right: 70px;
+  background-color: hsl(225, 50%, 48%);
+}
+
+.bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4
 
