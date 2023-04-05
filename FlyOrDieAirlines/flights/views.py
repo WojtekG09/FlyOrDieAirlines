@@ -14,8 +14,8 @@ def	home(request):
 
     return render(request, 'flights/index.html', {'airports': airports})
 
-# def login_page(request):
-# 	return render(request, 'flights/login.html')
+def reservation_page(request):
+	return render(request, 'flights/reservation_form.html')
 
 
 
@@ -46,7 +46,10 @@ def register_page(request):
     return render(request, 'flights/register.html', {'form': form})
 
 
-def search(request):
+def logout_view(request):
+    logout(request)
+    return render(request, 'flights/logout.html')
+
 
     if request.method == 'POST':
         # print(request.POST)
@@ -98,13 +101,6 @@ def logout_view(request):
 
 
 
-
-
-
-
-
-
-
 # @login_required
 # def make_reservation(request):
 #     return
@@ -116,3 +112,4 @@ def logout_view(request):
 #     else:
 #         form = ReservationForm()
 #     return render(request, 'reservation_form.html', {'form': form})
+

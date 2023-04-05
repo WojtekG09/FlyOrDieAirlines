@@ -30,7 +30,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav text-center ms-auto">
-                        {% if user.is_authenticated %}
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link active" href= "{% url 'flights:home' %}">Profile</a>
                     </li>
@@ -42,7 +42,7 @@
                         </a>
                     </li>
                 </ul>
-                    {% else %}
+                {% else %}
                 <li class="nav-item">
                     <a class="nav-link active" href= "{% url 'flights:login' %}">Log In</a>
                     </li>
@@ -204,10 +204,10 @@
                 </p>
                 <div class="text-start social-links social-icons">
                     <a href="https://www.linkedin.com/in/kalina-pilc/" target="_blank">
-                        <i class="fa fa-linkedin"></i>
+                        <i id="icon_k" class="fa fa-linkedin"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/wojciech-guzek-8646511a2/" target="_blank">
-                        <i class="fa fa-linkedin"></i>
+                        <i id="icon_w" class="fa fa-linkedin"></i>
                     </a>
                 </div>
             </div>
@@ -216,6 +216,8 @@
 <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
 <script src="{% static 'assets/bootstrap/js/CheckDropDowns.js'%}"></script>
 <script src="{% static 'assets/bootstrap/js/datepicker.js'%}"></script>
+<script src="{% static 'assets/bootstrap/js/OneWayTicket.js'%}"></script>
+<script src="{% static 'assets/bootstrap/js/TopOnRefresh.js'%}"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>-->
 </body>
 </html>

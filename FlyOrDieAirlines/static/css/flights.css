@@ -179,5 +179,64 @@ div.social-links {
   background-color: hsl(225, 50%, 48%);
 }
 
-.bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4
+#img_div {
+  background: url("starfish.jpg");
+  background-size: cover;
+  padding: 200px;
+  margin-top: 70px;
+}
 
+#dropdown_title {
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: hsl(225, 50%, 48%);
+  color: white;
+}
+
+#name_input {
+  padding: .150rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #33383b;
+  text-indent: 10px;
+  border-color: #8f9296 !important;
+}
+
+#name_item {
+  padding-right: 30px;
+  margin-left: 20px;
+}
+
+#surname_input {
+  padding: .150rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #33383b;
+  text-indent: 10px;
+  border-color: #8f9296 !important;
+}
+
+#motto {
+  font-family: 'Cookie';
+}
+
+#submit_form {
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: hsl(225, 50%, 48%);
+  color: white;
+  margin-right: 15px;
+}
+
+#title {
+  padding-left: 0;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+#icon_k, #icon_w
+{
+  margin-top: 7px;
+}
