@@ -50,6 +50,7 @@ def logout_view(request):
     logout(request)
     return render(request, 'flights/logout.html')
 
+def search(request):
 
     if request.method == 'POST':
         # print(request.POST)
@@ -90,6 +91,7 @@ def logout_view(request):
 
     # Render the search form if no search parameters are provided
     return render(request, 'flights/search.html')
+
 
 def logout_view(request):
     logout(request)
