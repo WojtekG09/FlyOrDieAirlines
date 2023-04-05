@@ -20,7 +20,7 @@
 <body>
     <nav class="navbar navbar-light navbar-expand-md" id="regi_log">
         <div class="container-fluid">
-            <a class="navbar-brand" id="logo_text" href="#">
+            <a class="navbar-brand" id="logo_text" href="{% url 'flights:home' %}">
                 Fly or Die
                 <span style="color: rgb(61, 92, 184);">Airlines</span>
             </a>
@@ -30,17 +30,30 @@
             </button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav text-center ms-auto">
+                        {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link active" href="login">Log In</a>
+                        <a class="nav-link active" href= "{% url 'flights:home' %}">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register">
+                        <a class="nav-link" href="{% url 'flights:logout' %}">
+                            <strong>
+                                <span style="color: rgb(61, 92, 184);" >Log out</span>
+                            </strong>
+                        </a>
+                    </li>
+                </ul>
+                    {% else %}
+                <li class="nav-item">
+                    <a class="nav-link active" href= "{% url 'flights:login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'flights:register' %}">
                             <strong>
                                 <span style="color: rgb(61, 92, 184);">Sign Up</span>
                             </strong>
                         </a>
                     </li>
-                </ul>
+                {% endif %}
             </div>
         </div>
     </nav>
