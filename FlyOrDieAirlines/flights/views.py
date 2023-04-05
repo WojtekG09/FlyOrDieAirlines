@@ -11,6 +11,7 @@ from django.db.models.functions import TruncDate
 
 def	home(request):
     airports = Airport.objects.all()
+
     return render(request, 'flights/index.html', {'airports': airports})
 
 def reservation_page(request):
@@ -45,11 +46,70 @@ def register_page(request):
     return render(request, 'flights/register.html', {'form': form})
 
 
+def logout_view(request):
+    logout(request)
+    return render(request, 'flights/logout.html')
 
-def search(request):
-    products = Airport.objects.all()
-    return render(request, 'product_list.html', {'products': products})
+
+    if request.method == 'POST':
+        # print(request.POST)
+        from_city = request.POST.get('from_city')
+        to_city = request.POST.get('to_city')
+        departure_date = request.POST.getlist('depature_date')
+        arrival_date = request.POST.get('arrival_date')
+        # print(request.POST.get('select_from'))
+        # departure_date = datetime.strptime(str(request.GET.get('depature')), '%Y-%m-%d ')
+        # arrival_date = datetime.strptime(request.GET.get('arrival'), '%Y-%m-%d ')
+
+        print(from_city)
+        print(departure_date)
+
+
+        # Entry.objects.filter(pub_date__date=datetime.date(2005, 1, 1))
+
+        # Filter flights based on search parameters
+        flights = Flight.objects.filter(
+             departure_airport_code=from_city,
+             arrival_airport_code=to_city,
+            # departure__date=departure_date,
+            # arrival__date=arrival_date
+        )
+        for flight in flights:
+            print(flight)
+
+
+#             .annotate(
+#             departure_date_only=TruncDate('departure_date'),
+#             arrival_date_only=TruncDate('arrival_date')
+# )
+
+
+
+        # Render template with search results
+        return render(request, 'flights/search.html', {'flights': flights})
+
+    # Render the search form if no search parameters are provided
+    return render(request, 'flights/search.html')
 
 def logout_view(request):
     logout(request)
     return render(request, 'flights/logout.html')
+
+
+
+
+
+
+
+# @login_required
+# def make_reservation(request):
+#     return
+#     if request.method == 'POST':
+#         form = ReservationForm(request.POST)
+#         if form.is_valid():
+#
+#
+#     else:
+#         form = ReservationForm()
+#     return render(request, 'reservation_form.html', {'form': form})
+

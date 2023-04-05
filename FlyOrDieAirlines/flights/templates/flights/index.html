@@ -84,6 +84,7 @@
                 <label class="form-check-label" for="oneway_radio">One way</label>
             </div>
         </div>
+
         <nav class="navbar navbar-light navbar-expand-md border rounded" id="navbar_search">
             <div class="container-fluid">
                 <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-3">
@@ -104,7 +105,7 @@
                         </select>
                     </ul>
                     <ul id="select_to" class="nav-item">
-                        <select id="select_to_box" name="to_city" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
+                        <select id="select_to_box"  name="to_city"  class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
                             <option value="" disble selected hidden>To</option>
                             {% for airport in airports %}
                             <option value="{{airport.airport_code}}">
@@ -126,7 +127,9 @@
                 </form>
             </div>
         </nav>
+
     </div>
+
     <div id="add">
         <section id = "add_placholder">
     <div class="placeholder bg-light border rounded border-light jumbotron py-5 px-4">
