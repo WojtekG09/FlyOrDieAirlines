@@ -1,16 +1,20 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegisterForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
-from .models import Airport
+from django.contrib.auth import authenticate, login, logout
+from .models import Airport, Flight
+# from .forms import ReservationForm
+from datetime import datetime
+from django.db.models.functions import TruncDate
 
 def	home(request):
     airports = Airport.objects.all()
     return render(request, 'flights/index.html', {'airports': airports})
 
-# def login_page(request):
-# 	return render(request, 'flights/login.html')
+def reservation_page(request):
+	return render(request, 'flights/reservation_form.html')
 
 
 
@@ -45,3 +49,7 @@ def register_page(request):
 def search(request):
     products = Airport.objects.all()
     return render(request, 'product_list.html', {'products': products})
+
+def logout_view(request):
+    logout(request)
+    return render(request, 'flights/logout.html')

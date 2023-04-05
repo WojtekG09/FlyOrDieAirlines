@@ -76,12 +76,12 @@
     <div class="container" id="search_container">
         <div id="div_radio">
             <div class="form-check" id="radio-return">
-                <input class="form-check-input" type="radio" id="formCheck-1">
-                <label class="form-check-label" for="formCheck-1">Return trip</label>
+                <input class="form-check-input" type="radio" id="return_radio" name="radio_btn" value="show" onclick="CheckRadio(1)" checked>
+                <label class="form-check-label" for="return_radio">Return trip</label>
             </div>
             <div class="form-check text-start" id="radio-one">
-                <input class="form-check-input" type="radio" id="formCheck-2">
-                <label class="form-check-label" for="formCheck-2">One way</label>
+                <input class="form-check-input" type="radio" id="oneway_radio" name="radio_btn" autocomplete="off" value="hide" onclick="CheckRadio(2)">
+                <label class="form-check-label" for="oneway_radio">One way</label>
             </div>
         </div>
         <nav class="navbar navbar-light navbar-expand-md border rounded" id="navbar_search">
@@ -90,9 +90,11 @@
                     <span class="visually-hidden">Toggle navigation</span>
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <form  action="/search/" method="POST">
+                {% csrf_token %}
                 <div class="collapse navbar-collapse" id="navcol-3">
                     <ul id="select_from" class="nav-item">
-                        <select id="select_from_box" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
+                        <select id="select_from_box" name="from_city" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
                             <option value="" disable hidden selected>From</option>
                             {% for airport in airports %}
                             <option value="{{airport.airport_code}}">
@@ -102,7 +104,7 @@
                         </select>
                     </ul>
                     <ul id="select_to" class="nav-item">
-                        <select id="select_to_box" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
+                        <select id="select_to_box" name="to_city" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
                             <option value="" disble selected hidden>To</option>
                             {% for airport in airports %}
                             <option value="{{airport.airport_code}}">
@@ -112,15 +114,16 @@
                         </select>
                     </ul>
                     <ul id="select_depature" class="nav-item">
-                        <input id="depature" class="border rounded-pill border-light d-xxl-flex align-items-xxl-start" type="date" autocomplete="off" min="{{ current_date }}"/>
+                        <input id="depature" name = "depature1" class="border rounded-pill border-light d-xxl-flex align-items-xxl-start" type="date" autocomplete="off" min="{{ current_date }}"/>
                     </ul>
                     <ul id="select_arrival" class="nav-item">
                         <input id="arrival" class="border rounded-pill border-light d-xxl-flex align-items-xxl-start" type="date" autocomplete="off" min="{{ current_date }}"/>
                     </ul>
                     <ul id="nav_search_btn" class="nav-item">
-                        <button id="search_btn" class="btn btn-primary" type="button">search</button>
+                        <button id="search_btn" class="btn btn-primary" type="submit">search</button>
                     </ul>
                 </div>
+                </form>
             </div>
         </nav>
     </div>
