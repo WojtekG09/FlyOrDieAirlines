@@ -17,7 +17,8 @@ def	home(request):
 def reservation_page(request):
 	return render(request, 'flights/reservation_form.html')
 
-
+def summary_page(request):
+	return render(request, 'flights/summary.html')
 
 def login_page(request):
     if request.method == 'POST':

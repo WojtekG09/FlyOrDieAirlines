@@ -12,5 +12,6 @@ urlpatterns = [
     path("reservation_form/", views.reservation_page, name="reservation_form"),
     path('logout/', views.logout_view, name='logout'),
     path("search/", views.search, name="search"),
+    path("summary/", views.search, name="summary"),
 
 ]
