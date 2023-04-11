@@ -240,3 +240,49 @@ div.social-links {
 {
   margin-top: 7px;
 }
+
+#ticket_one_way {
+  background: url("ticket_template.png");
+  background-size: contain;
+  padding: 290px;
+  margin-top: 70px;
+  height: 300px;
+}
+
+#qr {
+  margin-right: -156px;
+}
+
+#passenger_name {
+  padding-bottom: 0px;
+  margin-top: -75px;
+  margin-right: 620px;
+  margin-left: -205px;
+}
+
+#passenger_surname {
+  margin-top: -44px;
+}
+
+#item_name {
+  margin-right: 25px;
+}
+
+#fligts_passenger {
+  margin-top: -84px;
+  margin-left: -237px;
+}
+
+#item_from {
+  margin-right: 345px;
+}
+
+#flights_city {
+  margin-left: -236px;
+  margin-top: 55px;
+}
+
+#flights_date {
+  margin-left: -237px;
+  padding-top: 65px;
+}
