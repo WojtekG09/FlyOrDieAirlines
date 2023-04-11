@@ -173,4 +173,116 @@ div.social-links {
   text-align: center;
 }
 
+#login_btn {
+  padding-left: 70px;
+  padding-right: 70px;
+  background-color: hsl(225, 50%, 48%);
+}
 
+#img_div {
+  background: url("starfish.jpg");
+  background-size: cover;
+  padding: 200px;
+  margin-top: 70px;
+}
+
+#dropdown_title {
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: hsl(225, 50%, 48%);
+  color: white;
+}
+
+#name_input {
+  padding: .150rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #33383b;
+  text-indent: 10px;
+  border-color: #8f9296 !important;
+}
+
+#name_item {
+  padding-right: 30px;
+  margin-left: 20px;
+}
+
+#surname_input {
+  padding: .150rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #33383b;
+  text-indent: 10px;
+  border-color: #8f9296 !important;
+}
+
+#motto {
+  font-family: 'Cookie';
+}
+
+#submit_form {
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: hsl(225, 50%, 48%);
+  color: white;
+  margin-right: 15px;
+}
+
+#title {
+  padding-left: 0;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+#icon_k, #icon_w
+{
+  margin-top: 7px;
+}
+
+#ticket_one_way {
+  background: url("ticket_template.png");
+  background-size: contain;
+  padding: 290px;
+  margin-top: 70px;
+  height: 300px;
+}
+
+#qr {
+  margin-right: -156px;
+}
+
+#passenger_name {
+  padding-bottom: 0px;
+  margin-top: -75px;
+  margin-right: 620px;
+  margin-left: -205px;
+}
+
+#passenger_surname {
+  margin-top: -44px;
+}
+
+#item_name {
+  margin-right: 25px;
+}
+
+#fligts_passenger {
+  margin-top: -84px;
+  margin-left: -237px;
+}
+
+#item_from {
+  margin-right: 345px;
+}
+
+#flights_city {
+  margin-left: -236px;
+  margin-top: 55px;
+}
+
+#flights_date {
+  margin-left: -237px;
+  padding-top: 65px;
+}
