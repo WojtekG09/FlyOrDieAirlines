@@ -1,8 +1,8 @@
 {% extends 'flights/base.html' %}
 {% block content %}
 {% if flights %}
-  <table>
-    <thead>
+  <table class="text-center">
+    <thead class="text-center">
       <tr>
         <th>From</th>
         <th>To</th>
@@ -10,10 +10,11 @@
         <th>Arrival Date</th>
         <th>Price</th>
       </tr>
-    </thead>
-    <tbody>
+    </thead >
+    <div  class="text-center">
+    <tbody class="text-center">
       {% for flight in flights %}
-        <tr>
+        <tr class="text-center">
           <td>{{ flight.departure_airport_code }}</td>
           <td>{{ flight.arrival_airport_code }}</td>
           <td>{{ flight.departure_time }}</td>
@@ -22,6 +23,7 @@
         </tr>
       {% endfor %}
     </tbody>
+      </div>
   </table>
 {% else %}
   <p>No flights found.</p>

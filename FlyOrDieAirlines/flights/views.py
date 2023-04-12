@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .models import Airport, Flight
 # from .forms import ReservationForm
-from datetime import datetime
+from datetime import datetime, date
 from django.db.models.functions import TruncDate
 
 def	home(request):
@@ -54,18 +54,18 @@ def logout_view(request):
 def search(request):
 
     if request.method == 'POST':
-        # print(request.POST)
+        print(request.POST)
         from_city = request.POST.get('from_city')
         to_city = request.POST.get('to_city')
-        departure_date = request.POST.getlist('depature_date')
-        arrival_date = request.POST.get('arrival_date')
-        # print(request.POST.get('select_from'))
+        departure_datetime = datetime.strptime(request.POST.get('depature_date'), '%Y-%m-%d')
+        departure_date = datetime.date(departure_datetime)
+        return_datetime = datetime.strptime(request.POST.get('return_date'), '%Y-%m-%d')
+        return_date = return_datetime
         # departure_date = datetime.strptime(str(request.GET.get('depature')), '%Y-%m-%d ')
         # arrival_date = datetime.strptime(request.GET.get('arrival'), '%Y-%m-%d ')
 
         print(from_city)
-        print(departure_date)
-
+        # print(datetime.strptime(return_date, '%Y-%m-%d' ))
 
         # Entry.objects.filter(pub_date__date=datetime.date(2005, 1, 1))
 
@@ -73,8 +73,8 @@ def search(request):
         flights = Flight.objects.filter(
              departure_airport_code=from_city,
              arrival_airport_code=to_city,
-            # departure__date=departure_date,
-            # arrival__date=arrival_date
+             departure_time__date=departure_date,
+             arrival_time__date=return_date,
         )
         for flight in flights:
             print(flight)

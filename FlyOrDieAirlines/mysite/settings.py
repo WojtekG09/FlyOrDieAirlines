@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'flights',
-    # 'crispy_forms',
+    'crispy_forms',
     # 'crispy_bootstrap5',
 ]
 
@@ -133,6 +133,6 @@ STATICFILES_DIRS = (
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/'
 
 LOGIN_URL = 'login'
