@@ -286,3 +286,47 @@ div.social-links {
   margin-left: -237px;
   padding-top: 65px;
 }
+
+#istheflight {
+  background: url("istheticket.png");
+  background-size: contain;
+  padding: 80px;
+  margin-top: 100px;
+  height: 100px;
+  width: 890px;
+}
+
+#istheflight_nav {
+  margin-top: -55px;
+}
+
+#navcol-1_istheflight {
+  margin-bottom: -132px;
+}
+
+#departure_airport_nav {
+  margin-left: 60px;
+  margin-right: 130px;
+}
+
+#departure_time-date_nav {
+  margin-left: -486px;
+  margin-right: 169px;
+}
+
+#departure_time-date {
+  color: black;
+  font-weight: 700;
+}
+
+#arrival_time-date {
+  color: black;
+  font-weight: 700;
+}
+
+#istheflight_btn {
+  margin-left: 647px;
+  background-color: hsl(225, 50%, 48%);
+  color: white;
+}
+

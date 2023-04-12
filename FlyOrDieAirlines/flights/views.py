@@ -57,9 +57,9 @@ def search(request):
         print(request.POST)
         from_city = request.POST.get('from_city')
         to_city = request.POST.get('to_city')
-        departure_datetime = datetime.strptime(request.POST.get('depature_date'), '%Y-%m-%d')
+        departure_datetime = datetime.strptime(request.POST.get('depature1'), '%Y-%m-%d')
         departure_date = datetime.date(departure_datetime)
-        return_datetime = datetime.strptime(request.POST.get('return_date'), '%Y-%m-%d')
+        return_datetime = datetime.strptime(request.POST.get('depature2'), '%Y-%m-%d')
         return_date = return_datetime
         # departure_date = datetime.strptime(str(request.GET.get('depature')), '%Y-%m-%d ')
         # arrival_date = datetime.strptime(request.GET.get('arrival'), '%Y-%m-%d ')

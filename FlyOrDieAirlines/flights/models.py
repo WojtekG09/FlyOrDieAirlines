@@ -43,8 +43,7 @@ class Flight(models.Model):
             raise ValidationError('departure date cannot be later than arrival date.')
         if self.departure_airport_code == self.arrival_airport_code:
             raise ValidationError('departure airport cannot be same as the arrival airport.')
-        if self.departure_time > datetime.date:
-            raise ValidationError('departure date cannot be later than arrival date.')
+
 
 class User(models.Model):
     user_id = models.AutoField(primary_key=True)
