@@ -53,55 +53,49 @@ def logout_view(request):
 
 def search(request):
 
-    if request.method == 'POST':
+
+    if request.method == 'POST' :
         print(request.POST)
         from_city = request.POST.get('from_city')
         to_city = request.POST.get('to_city')
         departure_datetime = datetime.strptime(request.POST.get('depature1'), '%Y-%m-%d')
         departure_date = datetime.date(departure_datetime)
-        return_datetime = datetime.strptime(request.POST.get('depature2'), '%Y-%m-%d')
-        return_date = return_datetime
-        # departure_date = datetime.strptime(str(request.GET.get('depature')), '%Y-%m-%d ')
-        # arrival_date = datetime.strptime(request.GET.get('arrival'), '%Y-%m-%d ')
-
         print(from_city)
-        # print(datetime.strptime(return_date, '%Y-%m-%d' ))
+        print(to_city)
+        print(departure_date)
+        if len(request.POST) == 5:
+            return_datetime = datetime.strptime(request.POST.get('depature2'), '%Y-%m-%d')
+            return_date = return_datetime
+            print("weszlo 5")
+            flights = Flight.objects.filter(
+                departure_airport_code=from_city,
+                arrival_airport_code=to_city,
+                departure_time__date=departure_date,
+            )
+            return_flights = Flight.objects.filter(
+                departure_airport_code=to_city,
+                arrival_airport_code=from_city,
+                departure_time__date=return_date,
+            )
+            return render(request, 'flights/search.html', {'flights': flights, 'return_flights': return_flights})
+        elif len(request.POST) == 4:
+            print("weszlo 4")
 
-        # Entry.objects.filter(pub_date__date=datetime.date(2005, 1, 1))
+            flights = Flight.objects.filter(
+                departure_airport_code=from_city,
+                arrival_airport_code=to_city,
+                departure_time__date=departure_date,
+            )
+            return render(request, 'flights/search.html', {'flights': flights})
 
-        # Filter flights based on search parameters
-        flights = Flight.objects.filter(
-             departure_airport_code=from_city,
-             arrival_airport_code=to_city,
-             departure_time__date=departure_date,
-             arrival_time__date=return_date,
-        )
-        for flight in flights:
-            print(flight)
+        print(len(request.POST))
 
-
-#             .annotate(
-#             departure_date_only=TruncDate('departure_date'),
-#             arrival_date_only=TruncDate('arrival_date')
-# )
-
-
-
-        # Render template with search results
-        return render(request, 'flights/search.html', {'flights': flights})
-
-    # Render the search form if no search parameters are provided
     return render(request, 'flights/search.html')
 
 
 def logout_view(request):
     logout(request)
     return render(request, 'flights/logout.html')
-
-
-
-
-
 
 
 # @login_required
