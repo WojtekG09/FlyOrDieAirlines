@@ -1,3 +1,41 @@
+/* base.html */
+/* HEADER */
+
+#regi_log {
+  background-color: hsl(180, 17%, 95%);
+}
+
+#logo_text {
+  color: black;
+  font: normal 36px Cookie, cursive;
+  padding-left: 50px;
+}
+
+#navcol-2 {
+  padding-right: 50px;
+}
+
+#info {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+#search_link {
+  padding-right: 20px;
+}
+
+#about_link {
+  padding-right: 20px;
+}
+
+#contact {
+  background-color: hsl(225, 50%, 48%);
+  border-color: hsl(225, 50%, 48%);
+  border-radius: 200px;
+}
+
+/* FOOTER */
+
 footer {
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -113,3 +151,13 @@ div.social-links {
   margin-bottom: 5px;
 }
 
+div.social-links {
+  margin-top: 20px;
+  color: #fff;
+  padding-top: 20px;
+}
+
+#icon_k, #icon_w
+{
+  margin-top: 7px;
+}
