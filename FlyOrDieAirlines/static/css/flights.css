@@ -149,11 +149,9 @@ div.social-links {
   padding-left: 50px;
 }
 
-#search_btn {
-  color: red!important; /* Change color to red */
-}
-
-
+/*#search_btn {*/
+/*  color: red!important; !* Change color to red *!*/
+/*}*/
 
 #select_from_box {
   font-size: 12px;
@@ -302,37 +300,36 @@ div.social-links {
   width: 890px;
 }
 
-#istheflight_nav {
-  margin-top: -55px;
-}
-
-#navcol-1_istheflight {
-  margin-bottom: -132px;
-}
-
-#departure_airport_nav {
-  margin-left: 60px;
-  margin-right: 100px;
-}
-
-#departure_time-date_nav {
-  margin-left: -460px;
-  margin-right: 40px;
-}
-
-#departure_time-date {
-  color: black;
-  font-weight: 700;
-}
-
-#arrival_time-date {
-  color: black;
-  font-weight: 700;
-}
-
 #istheflight_btn {
   margin-left: 647px;
   background-color: hsl(225, 50%, 48%);
   color: white;
 }
 
+#date_time_table {
+  margin-top: -92px;
+  width: 600px;
+}
+
+#departure_date_time, #arrival_date_time {
+  color: black;
+  font-weight: 600;
+}
+
+#airport_table {
+  margin-right: 142px;
+  margin-top: 19px;
+}
+
+#price {
+  text-shadow: 2px 1px 2px rgb(116,146,231);
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+  color: #304991;
+  margin-left: 656px;
+}
+
+#departure_date_time_col, #arrival_date_time_col {
+  width: 300px;
+}
