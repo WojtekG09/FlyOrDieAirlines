@@ -149,6 +149,12 @@ div.social-links {
   padding-left: 50px;
 }
 
+#search_btn {
+  color: red!important; /* Change color to red */
+}
+
+
+
 #select_from_box {
   font-size: 12px;
   padding-right: 195px;
@@ -242,7 +248,7 @@ div.social-links {
 }
 
 #ticket_one_way {
-  background: url("ticket_template.png");
+  background: url("ticket_template.PNG");
   background-size: contain;
   padding: 290px;
   margin-top: 70px;
@@ -288,7 +294,7 @@ div.social-links {
 }
 
 #istheflight {
-  background: url("istheticket.png");
+  background: url("istheticket.PNG");
   background-size: contain;
   padding: 80px;
   margin-top: 100px;
@@ -306,12 +312,12 @@ div.social-links {
 
 #departure_airport_nav {
   margin-left: 60px;
-  margin-right: 130px;
+  margin-right: 100px;
 }
 
 #departure_time-date_nav {
-  margin-left: -486px;
-  margin-right: 169px;
+  margin-left: -460px;
+  margin-right: 40px;
 }
 
 #departure_time-date {
