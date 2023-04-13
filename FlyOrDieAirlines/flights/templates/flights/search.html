@@ -1,8 +1,48 @@
 {% extends 'flights/base.html' %}
 {% block content %}
-{% if flights %}
 
+{% if flights %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 ">
       {% for flight in flights %}
+        <div class="container" id="istheflight">
+            <nav class="navbar navbar-light navbar-expand-md" id="istheflight_nav">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navcol-1_istheflight">
+                        <ul class="navbar-nav">
+                            <li class="nav-item" id="departure_airport_nav">
+                                <span id="departure_airport">{{ flight.departure_airport_code }}</span>
+                            </li>
+                            <li class="nav-item" id="arrival_airport_nav">
+                                <span id="arrival_airport">{{ flight.arrival_airport_code }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navcol-2_istheflight" style="margin-bottom: 0px;">
+                        <ul class="navbar-nav">
+                            <li class="nav-item" id="departure_time-date_nav">
+                                <span id="departure_time-date">{{ flight.departure_time }}</span>
+                            </li>
+                            <li class="nav-item" id="arrival_time-date_nav">
+                                <span id="arrival_time-date">{{ flight.arrival_time }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <button class="btn btn-primary" id="istheflight_btn" type="submit">Submit</button>
+        </div>
+      {% endfor %}
+    </div>
+{% else %}
+  <p>No flights found.</p>
+
+{% endif %}
+
+{% if return_flights %}
+          <div class="col-md-6">
+ {% for flight in return_flights %}
     <div class="container" id="istheflight">
         <nav class="navbar navbar-light navbar-expand-md" id="istheflight_nav">
             <div class="container-fluid">
@@ -33,6 +73,9 @@
       {% endfor %}
 
 {% else %}
-  <p>No flights found.</p>
+  <p>No  return flights found.</p>
 {% endif %}
+  </div>
+       </div>
+     </div>
 {% endblock content %}
