@@ -1,6 +1,6 @@
 /* search.html */
 
-#istheflight {
+#istheflight, #istheflight_return {
   background: url("istheticket.PNG");
   background-size: contain;
   padding: 80px;
@@ -9,36 +9,36 @@
   width: 890px;
 }
 
-#istheflight_btn {
+#istheflight_btn, #istheflight_btn_return {
   margin-left: 647px;
   background-color: hsl(225, 50%, 48%);
   color: white;
 }
 
-#date_time_table {
+#date_time_table, #date_time_table_return {
   margin-top: -92px;
   width: 600px;
 }
 
-#departure_date_time, #arrival_date_time {
+#departure_date_time, #arrival_date_time, #departure_date_time_return, #arrival_date_time_return {
   color: black;
   font-weight: 600;
 }
 
-#airport_table {
+#airport_table, #airport_table_return {
   margin-right: 142px;
   margin-top: 19px;
 }
 
-#price {
+#price, #price_return {
   text-shadow: 2px 1px 2px rgb(116,146,231);
   font-size: 22px;
   font-weight: bold;
   font-style: italic;
   color: #304991;
-  margin-left: 656px;
+  margin-left: 650px;
 }
 
-#departure_date_time_col, #arrival_date_time_col {
+#departure_date_time_col, #arrival_date_time_col, #departure_date_time_col_return, #arrival_date_time_col_return {
   width: 300px;
 }
