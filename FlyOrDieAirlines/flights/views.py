@@ -112,19 +112,28 @@ def logout_view(request):
 def delete_reservation(request, reservation_id):
     reservation = Reservation.objects.get(reservation_id=reservation_id)
     reservation.delete()
-    profile_url = reverse('flights:profile')
-    print(profile_url)
-    return redirect(profile_url)
+    return redirect('flights:profile')
 
-# @login_required
-# def make_reservation(request):
-#     return
-#     if request.method == 'POST':
-#         form = ReservationForm(request.POST)
-#         if form.is_valid():
-#
-#
-#     else:
-#         form = ReservationForm()
-#     return render(request, 'reservation_form.html', {'form': form})
+@login_required
+def make_reservation(request):
+    if request.method == 'POST':
+        flight = request.POST.get('flight_1')
+        returnFlight = request.POST.get('flight_2')
+        request.session['flight'] = flight
+        request.session['returnFlight'] = returnFlight
+        return redirect('enter_details')
+    return render(request, 'reservation_form')
 
+def reservation_page(request):
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            selected_flight_1 = request.session.get('selected_flight_1')
+            selected_flight_2 = request.session.get('selected_flight_2')
+            flight_1 = Flight.objects.get(id=selected_flight_1)
+            flight_2 = Flight.objects.get(id=selected_flight_2)
+            name = form.cleaned_data['name']
+            surname = form.cleaned_data['surname']
+            reservation_1 = Reservation(name=name, surname=surname, flight_1=flight_1, flight_2=flight_2)
+            reservation.save()
+            return redirect('reservation_success')
