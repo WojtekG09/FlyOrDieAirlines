@@ -1,6 +1,6 @@
 /* search.html */
 
-#istheflight, #istheflight_return {
+.container_flight, .container_flight_return {
   background: url("istheticket.PNG");
   background-size: contain;
   padding: 80px;
