@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan&amp;display=swap">
     <link rel="stylesheet" href="{%static 'fonts/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{%static 'css/Pretty-Footer-.css' %}">
-    <link rel="stylesheet" href="{% static 'css/flights.css' %}">
-    <link rel="stylesheet" href="{%static 'css/Login-Form-Basic-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lo-re.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reservation_form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'css/summary.css' %}">
 </head>
 
 <body>
@@ -24,10 +27,6 @@
                 Fly or Die
                 <span style="color: rgb(61, 92, 184);">Airlines</span>
             </a>
-            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2">
-                <span class="visually-hidden">Toggle navigation</span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav text-center ms-auto">
                     {% if user.is_authenticated %}
@@ -59,10 +58,6 @@
     </nav>
     <nav class="navbar navbar-light navbar-expand-md" id="info">
         <div class="container-fluid">
-            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
-                <span class="visually-hidden">Toggle navigation</span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <img id="logo" src="{%static 'assets/logo.png'%}" width="142" height="70">
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
@@ -142,6 +137,5 @@
 <script src="{% static 'assets/bootstrap/js/datepicker.js'%}"></script>
 <script src="{% static 'assets/bootstrap/js/OneWayTicket.js'%}"></script>
 <script src="{% static 'assets/bootstrap/js/TopOnRefresh.js'%}"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>-->
 </body>
 </html>

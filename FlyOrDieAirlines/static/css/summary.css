@@ -1,0 +1,33 @@
+/* summary.html */
+
+#ticket_one_way {
+  background: url("ticket_template.PNG");
+  background-size: contain;
+  padding: 290px;
+  margin-top: 70px;
+  height: 300px;
+}
+
+#flights_passenger {
+  margin-top: -84px;
+  margin-left: -237px;
+}
+
+#item_name {
+  margin-right: 25px;
+}
+
+#flights_city {
+  margin-left: -236px;
+  margin-top: 55px;
+}
+
+#item_from {
+  margin-right: 345px;
+}
+
+#flights_date {
+  margin-left: -237px;
+  padding-top: 65px;
+}
+

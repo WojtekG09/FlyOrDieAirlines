@@ -1,0 +1,114 @@
+/* index.html */
+
+#home_container {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#slogan {
+  font-family: 'League Spartan';
+  font-weight: 700;
+  padding: 20px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif, 'League Spartan';
+  font-weight: 500;
+  line-height: 1.2;
+  color: #5a5a5a;
+}
+
+#plane_home {
+  margin-right: auto;
+  margin-left: auto;
+  background: url("clouds_gif.gif");
+  background-size: cover;
+  border-radius: 250px;
+}
+
+#search_container {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+#div_radio {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 65px;
+  padding-bottom: 40px;
+  max-width: 1000px;
+}
+
+#radio-return {
+  float: left;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#radio-one {
+  float: left;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#navbar_search {
+  clear: both;
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: hsl(225, 50%, 48%);
+}
+
+#select_from_box {
+  font-size: 12px;
+  padding-right: 195px;
+}
+
+#select_to_box {
+  font-size: 12px;
+  padding-right: 195px;
+}
+
+#depature {
+  font-size: 12px;
+  padding-left: 5px;
+  height: 37px;
+  text-align: center;
+}
+
+#arrival {
+  font-size: 12px;
+  padding-left: 5px;
+  height: 37px;
+  text-align: center;
+}
+
+#search_btn {
+  background-color: rgb(250,189,160);
+  border-color: rgb(250,189,160);
+  border-radius: 200px;
+  color: black;
+}
+
+#add {
+  text-align: center;
+  padding: 40px;
+  background-image: url("add.png");
+  background-size: cover;
+}
+
+#add_placholder {
+  text-align: left;
+  padding-left: 100px;
+}
