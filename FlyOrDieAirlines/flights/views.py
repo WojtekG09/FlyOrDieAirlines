@@ -23,6 +23,9 @@ def summary_page(request):
 def about_page(request):
 	return render(request, 'flights/about.html')
 
+def profile_page(request):
+	return render(request, 'flights/profile.html')
+
 def login_page(request):
     if request.method == 'POST':
         username = request.POST.get('username')
