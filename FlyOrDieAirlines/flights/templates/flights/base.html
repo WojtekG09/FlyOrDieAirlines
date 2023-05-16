@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="stylesheet" href="{% static 'css/summary.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                 <ul class="navbar-nav text-center ms-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link active" href= "{% url 'flights:home' %}">Profile</a>
+                        <a class="nav-link active" href= "{% url 'flights:profile' %}">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'flights:logout' %}">
@@ -89,7 +90,6 @@
                     <a href="{% url 'flights:home' %}#search_container">Search</a>
                     <strong> · </strong>
                     <a href="{% url 'flights:about' %}">About Us</a>
-                    <strong> ·&nbsp;</strong>
                 </p>
                 <p class="company-name">Fly Or Die Airlines © 2023</p>
             </div>
