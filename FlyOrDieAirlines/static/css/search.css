@@ -10,11 +10,12 @@
   width: 890px;
 }
 
-#istheflight_btn, #istheflight_btn_return {
+.btn.btn-primary, button[id^="istheflight_btn_"] {
   margin-left: 647px;
   background-color: hsl(225, 50%, 48%);
   color: white;
 }
+
 
 #date_time_table, #date_time_table_return {
   margin-top: -92px;
