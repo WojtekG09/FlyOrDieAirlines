@@ -66,31 +66,30 @@
                         <a class="nav-link" href="{% url 'flights:home' %}#search_container">search</a>
                     </li>
                     <li class="nav-item" id="about_link">
-                        <a class="nav-link" href="% url 'flights:about' %">about us</a>
+                        <a class="nav-link" href="{% url 'flights:about' %}">about us</a>
                     </li>
                 </ul>
-                <button class="btn btn-primary" id="contact" type="button">contact</button>
+                <a id="contact" class="btn btn-primary" role="button" href="{% url 'flights:home' %}#footer">contact</a>
             </div>
         </div>
     </nav>
     {% block content %}
     {% endblock %}
     <footer>
-        <div class="row">
+        <div class="row" id="footer">
             <div class="col-sm-6 col-md-4 footer-navigation">
                 <h3>
-                    <a href="#">Fly or Die&nbsp;
+                    <a href="{% url 'flights:home' %}">Fly or Die&nbsp;
                         <span>Airlines</span>
                     </a>
                 </h3>
                 <p class="links">
-                    <a href="#">Home</a>
+                    <a href="{% url 'flights:home' %}">Home</a>
                     <strong> · </strong>
-                    <a href="#">Search</a>
+                    <a href="{% url 'flights:home' %}#search_container">Search</a>
                     <strong> · </strong>
-                    <a href="#">About Us</a>
+                    <a href="{% url 'flights:about' %}">About Us</a>
                     <strong> ·&nbsp;</strong>
-                    <a href="#">Contact</a>
                 </p>
                 <p class="company-name">Fly Or Die Airlines © 2023</p>
             </div>
