@@ -10,7 +10,7 @@
   width: 890px;
 }
 
-.btn.btn-primary, button[id^="istheflight_btn_"] {
+#istheflight_btn, #istheflight_btn_return, button[id^="istheflight_btn_"] {
   margin-left: 647px;
   background-color: hsl(225, 50%, 48%);
   color: white;
