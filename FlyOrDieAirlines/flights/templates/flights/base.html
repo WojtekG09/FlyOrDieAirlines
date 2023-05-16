@@ -63,10 +63,10 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item" id="search_link">
-                        <a class="nav-link" href="http://127.0.0.1:8000/#search_container">search</a>
+                        <a class="nav-link" href="{% url 'flights:home' %}#search_container">search</a>
                     </li>
                     <li class="nav-item" id="about_link">
-                        <a class="nav-link" href="#">about us</a>
+                        <a class="nav-link" href="% url 'flights:about' %">about us</a>
                     </li>
                 </ul>
                 <button class="btn btn-primary" id="contact" type="button">contact</button>
