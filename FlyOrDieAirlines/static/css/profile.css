@@ -1,0 +1,46 @@
+/* profile.html */
+
+#airport_table_profile
+{
+    margin-top: 46px;
+    margin-right: 142px;
+}
+
+.container_flight_profile{
+  background: url("istheticket.PNG");
+  background-size: contain;
+  padding: 80px;
+  margin-top: 50px;
+  margin-left: 50px;
+  height: 100px;
+  width: 890px;
+}
+
+#istheflight_btn_profile{
+  margin-left: 647px;
+  background-color: rgb(215,5,5);
+  border-color: rgb(215, 5, 5);
+  color: white;
+}
+
+#date_time_table_profile{
+  margin-top: -92px;
+  width: 600px;
+}
+
+#departure_date_time_profile, #arrival_date_time_profile{
+  color: black;
+  font-weight: 600;
+}
+
+#departure_date_time_col_profile, #arrival_date_time_col_profile{
+  width: 300px;
+}
+
+#hello_user{
+  font-family: 'League Spartan';
+  font-weight: 700;
+  padding: 20px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
