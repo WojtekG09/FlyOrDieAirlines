@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegisterForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import Airport, Flight
+from .models import Airport, Flight, Reservation
 # from .forms import ReservationForm
 from datetime import datetime, date
 from django.db.models.functions import TruncDate
@@ -23,8 +23,19 @@ def summary_page(request):
 def about_page(request):
 	return render(request, 'flights/about.html')
 
+@login_required
 def profile_page(request):
-	return render(request, 'flights/profile.html')
+
+    if request.method == 'POST' :
+        print(request.POST)
+        username = request.POST.get('username')
+        print(username)
+        reservations = Reservation.objects.filter(
+            user=username
+        )
+
+        return render(request, 'flights/profile.html', {'reservations': reservations})
+    return render(request, 'flights/profile.html')
 
 def login_page(request):
     if request.method == 'POST':
@@ -102,6 +113,7 @@ def search(request):
 def logout_view(request):
     logout(request)
     return render(request, 'flights/logout.html')
+
 
 
 # @login_required

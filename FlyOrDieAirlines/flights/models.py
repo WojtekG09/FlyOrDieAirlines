@@ -1,5 +1,6 @@
 import datetime
 
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models
 
@@ -45,32 +46,12 @@ class Flight(models.Model):
             raise ValidationError('departure airport cannot be same as the arrival airport.')
 
 
-class User(models.Model):
-    user_id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=30)
-
-
-
-# class Worker(models.Model):
-#     worker_id = models.AutoField(primary_key=True)
-#     first_name = models.CharField(max_length=100)
-#     last_name = models.CharField(max_length=100)
-#     email = models.EmailField()
-#     phone_number = models.CharField(max_length=20)
-#     address = models.CharField(max_length=200)
-#     job_title = models.CharField(max_length=100)
-#     salary = models.DecimalField(max_digits=10, decimal_places=2)
-#     hire_date = models.DateField()
-
 
 class Reservation(models.Model):
     reservation_id = models.AutoField(primary_key=True)
     flight_id = models.ForeignKey(Flight, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    # worker_id = models.ForeignKey(Worker, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     seat_number = models.CharField(max_length=10)
     date_reserved = models.DateField()
+
 

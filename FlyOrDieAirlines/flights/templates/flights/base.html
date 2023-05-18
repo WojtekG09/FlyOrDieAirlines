@@ -32,9 +32,15 @@
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav text-center ms-auto">
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link active" href= "{% url 'flights:profile' %}">Profile</a>
-                    </li>
+<form id="profile-post" action="/profile/" method="POST">
+    {% csrf_token %}
+    <li class="nav-item">
+            <input type="hidden" name="username" value="{{ request.user.id }}">
+
+        <a class="nav-link active" href="{% url 'flights:profile' %}" onclick="event.preventDefault(); submitPost();">Profile</a>
+    </li>
+</form>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'flights:logout' %}">
                             <strong>
@@ -139,5 +145,8 @@
 <script src="{% static 'assets/bootstrap/js/TopOnRefresh.js'%}"></script>
 <script src="{% static 'assets/bootstrap/js/TicketPicker.js'%}"></script>
 <script src="{% static 'assets/bootstrap/js/ReturnTicketPicker.js'%}"></script>
+<script src="{% static 'assets/bootstrap/js/SubmitPost.js'%}"></script>
 </body>
 </html>
+
+
