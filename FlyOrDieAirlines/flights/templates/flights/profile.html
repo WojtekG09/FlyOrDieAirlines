@@ -1,7 +1,9 @@
 {% extends 'flights/base.html' %}
 {% block content %}
 
-    <h1 id="hello_user">Hello, &lt;user&gt;</h1>
+    <h1 id="hello_user">Hello, {{ user.username }}</h1>
+    {% if reservations %}
+    {% for reservation in reservations %}
     <div class="container_flight_profile" id="istheflight_profile_{{ flight.flight_id}}">
         <button class="btn btn-primary" id="istheflight_btn_profile" type="button">
             Delete
@@ -9,30 +11,30 @@
         <div class="row" id="date_time_table_profile">
             <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="departure_date_time_col_profile">
                 <span id="departure_date_time_profile">
-<!--                    {{ flight.departure_time }}-->
-                    18 kwietnia
+                    {{ reservation.flight_id.departure_time }}
+
                 </span>
             </div>
             <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="arrival_date_time_col_profile">
                 <span id="arrival_date_time_profile">
-<!--                    {{ flight.arrival_time }}-->
-                    19 kwietnia
+                    {{ reservation.flight_id.arrival_time }}
+
                 </span>
             </div>
         </div>
         <div class="row" id="airport_table_profile" style="margin-top: 46px;">
             <div class="col-sm-6 col-xxl-6 d-xxl-flex justify-content-xxl-center" id="departure_airport_col">
                 <span id="departure_airport">
-<!--                    {{ flight.departure_airport_code }}-->
-                    Warszawa
+                    {{ reservation.flight_id.departure_airport_code }}
                 </span>
             </div>
             <div class="col-sm-6 d-xxl-flex justify-content-xxl-center" id="arrival_ariport_col">
                 <span id="arrival_airport">
-<!--                    {{ flight.arrival_airport_code }}-->
-                    Bali
+                    {{ reservation.flight_id.arrival_airport_code }}
                 </span>
             </div>
         </div>
     </div>
+{% endfor %}
+        {% endif %}
 {% endblock %}
