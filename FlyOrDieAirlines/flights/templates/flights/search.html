@@ -7,7 +7,7 @@
             {% for flight in flights %}
             <div class="container_flight" id="istheflight_{{ flight.flight_id}}">
                 <button class="btn btn-primary" id="istheflight_btn_{{ flight.flight_id}}" onclick="TicketPicker(this)" type="submit">
-                    Submit
+                    Select
                 </button>
                 <div class="row" id="date_time_table">
                     <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="departure_date_time_col">
@@ -48,7 +48,7 @@
             {% for flight in return_flights %}
             <div class="container_flight_return" id="istheflight_return_{{ flight.flight_id}}">
                 <button class="btn btn-primary" id="istheflight_btn_return_{{ flight.flight_id}}" onclick="ReturnTicketPicker(this)" type="submit">
-                    Submit
+                    Select
                 </button>
                 <div class="row" id="date_time_table_return">
                     <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="departure_date_time_col_return">
@@ -81,11 +81,14 @@
             {% endfor %}
 
             {% else %}
-            <p>No flights found.</p>
+            <p id="no_flights">No flights found.</p>
             {% endif %}
 
         </div>
     </div>
 </div>
+<button id="next" class="btn btn-primary" type="submit">
+    Next
+</button>
 
 {% endblock content %}
