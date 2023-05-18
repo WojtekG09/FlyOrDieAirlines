@@ -109,12 +109,15 @@ def search(request):
 
     return render(request, 'flights/search.html')
 
-
+@login_required
 def logout_view(request):
     logout(request)
     return render(request, 'flights/logout.html')
-
-
+@login_required
+def delete_reservation(request, reservation_id):
+    reservation = Reservation.objects.get(reservation_id=reservation_id)
+    reservation.delete()
+    return redirect('/profile')
 
 # @login_required
 # def make_reservation(request):

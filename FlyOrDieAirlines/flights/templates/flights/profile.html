@@ -5,9 +5,10 @@
     {% if reservations %}
     {% for reservation in reservations %}
     <div class="container_flight_profile" id="istheflight_profile_{{ flight.flight_id}}">
-        <button class="btn btn-primary" id="istheflight_btn_profile" type="button">
-            Delete
-        </button>
+    <form method="POST" action="{% url 'flights:deleteReservation' reservation.reservation_id %}">
+        {% csrf_token %}
+        <button class="btn btn-primary" id="istheflight_btn_profile" type="submit">Delete</button>
+    </form>
         <div class="row" id="date_time_table_profile">
             <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="departure_date_time_col_profile">
                 <span id="departure_date_time_profile">
