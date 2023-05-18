@@ -1,9 +1,11 @@
 {% extends 'flights/base.html' %}
 {% block content %}
 
-    <h1 id="hello_user">Hello, &lt;user&gt;</h1>
-    <div class="container_flight_profile" id="istheflight_profile_{{ flight.flight_id}}">
-        <button class="btn btn-primary" id="istheflight_btn_profile" type="button">
+    <h1 id="hello_user">
+        Hello, {{ user.username }};
+    </h1>
+    <div class="container_flight_profile" id="istheflight_profile_{{ flight.flight_id }}">
+        <button class="btn btn-primary" id="istheflight_btn_profile" type="submit" onclick="window.location.reload()">
             Delete
         </button>
         <div class="row" id="date_time_table_profile">
