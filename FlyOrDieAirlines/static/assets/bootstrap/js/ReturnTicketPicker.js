@@ -11,4 +11,5 @@ function ReturnTicketPicker(button) {
       }
     }
   });
+      document.getElementById('selectedReturnFlightId').value = flightId;
 }

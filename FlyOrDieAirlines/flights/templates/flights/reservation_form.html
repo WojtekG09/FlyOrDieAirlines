@@ -24,7 +24,10 @@
                                 <input class="bg-white border rounded border-white shadow-lg" type="text" name="surname_input" id="surname_input" required="" minlength="2" maxlength="20" placeholder="Surname" autocomplete="off">
                             </li>
                         </ul>
+                        <form id="flightForm" action="/reservation_form/" method="POST">
+                        {% csrf_token %}
                         <button class="btn btn-primary ms-auto" id="submit_form" type="submit">Submit</button>
+                            </form>
                     </div>
             </nav>
         </div>

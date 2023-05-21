@@ -117,23 +117,30 @@ def delete_reservation(request, reservation_id):
 @login_required
 def make_reservation(request):
     if request.method == 'POST':
-        flight = request.POST.get('flight_1')
-        returnFlight = request.POST.get('flight_2')
+        flight = request.POST.get('selected_flight_id')
+        returnFlight = request.POST.get('selectedReturnFlightId')
         request.session['flight'] = flight
         request.session['returnFlight'] = returnFlight
-        return redirect('enter_details')
-    return render(request, 'reservation_form')
+        print(flight)
+        print(returnFlight)
+        return redirect('flights:reservation_form')
+    return render(request, 'flights/reservation_form.html')
 
-def reservation_page(request):
+def reservation_form(request):
     if request.method == 'POST':
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            selected_flight_1 = request.session.get('selected_flight_1')
-            selected_flight_2 = request.session.get('selected_flight_2')
-            flight_1 = Flight.objects.get(id=selected_flight_1)
-            flight_2 = Flight.objects.get(id=selected_flight_2)
-            name = form.cleaned_data['name']
-            surname = form.cleaned_data['surname']
-            reservation_1 = Reservation(name=name, surname=surname, flight_1=flight_1, flight_2=flight_2)
-            reservation.save()
-            return redirect('reservation_success')
+        # form = ReservationForm(request.POST)
+        # if form.is_valid():
+        flight = request.session.get('flight')
+        returnFlight = request.session.get('returnFlight')
+        # flight_1 = Flight.objects.get(id=flight)
+        # flight_2 = Flight.objects.get(id=returnFlight)
+        print(flight + "log")
+        print(returnFlight)
+        # name = form.cleaned_data['name']
+        # surname = form.cleaned_data['surname']
+        # reservation_1 = Reservation(name=name, surname=surname, flight_1=flight_1, flight_2=flight_2)
+        # reservation_2 = Reservation(name=name, surname=surname, flight_1=flight_1, flight_2=flight_2)
+        # reservation_1.save()
+        # reservation_2.save()
+        return redirect('flights:summary')
+    return render(request, 'flights/reservation_form.html')

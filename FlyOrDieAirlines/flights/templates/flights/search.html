@@ -39,6 +39,7 @@
             </div>
             {% endfor %}
         </div>
+<!--         <input type="hidden" name="selected_flight_id" id="selectedFlightId">-->
         {% else %}
         <p>No flights found.</p>
         {% endif %}
@@ -79,7 +80,7 @@
                 </div>
             </div>
             {% endfor %}
-
+<!--             <input type="hidden" name="selected_flight_id" id="selectedReturnFlightId">-->
             {% else %}
             <p id="no_flights">No flights found.</p>
             {% endif %}
@@ -87,8 +88,11 @@
         </div>
     </div>
 </div>
-<button id="next" class="btn btn-primary" type="submit">
-    Next
-</button>
+<form id="flightForm" action="/make_reservation/" method="POST">
+  {% csrf_token %}
+  <input type="hidden" value="" name="selected_flight_id" id="selectedFlightId">
+    <input type="hidden" value="" name="selectedReturnFlightId" id="selectedReturnFlightId">
+  <button id="next" class="btn btn-primary" type="button">Next</button>
+</form>
 
 {% endblock content %}
