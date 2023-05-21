@@ -6,7 +6,7 @@
         <div class="col-md-6 ">
             {% for flight in flights %}
             <div class="container_flight" id="istheflight_{{ flight.flight_id}}">
-                <button class="btn btn-primary" id="istheflight_btn_{{ flight.flight_id}}" onclick="TicketPicker(this)" type="submit">
+                <button class="btn btn-primary" id="istheflight_btn_{{ flight.flight_id}}" onclick="TicketPicker(this)" type="button">
                     Select
                 </button>
                 <div class="row" id="date_time_table">
@@ -87,8 +87,8 @@
         </div>
     </div>
 </div>
-<!--<button id="next" class="btn btn-primary" type="submit">-->
-<!--    Next-->
-<!--</button>-->
+<button id="next" class="btn btn-primary" type="submit">
+    Next
+</button>
 
 {% endblock content %}
