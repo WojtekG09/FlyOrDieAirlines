@@ -10,6 +10,9 @@ function CheckRadio(val)
     {
         document.getElementById('select_arrival').style.display = 'none';
         document.getElementById('arrival').disabled = true;
+        // document.getElementById('return_column_title').style.display = 'none';
+        // document.getElementById('return_flight_noflight').style.display = 'none';
+        // document.getElementById('return_flight').style.display = 'none';
     }
 }
 
