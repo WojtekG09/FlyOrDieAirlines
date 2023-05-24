@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col-md-6" id="to_column_title">
             <h1 id="to_title">
-                From Warsaw to Bali
+                From {{ flights.0.departure_airport_code.airport_name }} to {{ flights.0.arrival_airport_code.airport_name }}
             </h1>
         </div>
         <div class="col-md-6" id="return_column_title">
             <h1 id="return_title">
-                From Bali to Warsaw
+                From {{ return_flights.0.departure_airport_code.airport_name }} to {{ return_flights.0.arrival_airport_code.airport_name }}
             </h1>
         </div>
     </div>
