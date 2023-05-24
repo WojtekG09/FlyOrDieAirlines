@@ -1,36 +1,46 @@
 {% extends 'flights/base.html' %}
 {% block content %}
 
-    <div class="container">
-        <div id="img_div">
-            <h1 class="display-3 text-lowercase text-end text-dark" id="motto">" Die with memories, not dreams "</h1>
-            <nav class="navbar navbar-light navbar-expand-md border rounded-pill" id="navbar_bg">
-                    <div class="collapse navbar-collapse" id="navcol-1">
-                        <ul class="navbar-nav">
-                            <li class="nav-item align-self-center" id="title_item">
-                                <ul id="title" class="nav-item">
-                                    <select id="dropdown_title" class="text-light border rounded-pill navbar-text" autocomplete="off">
-                                        <option value="" selected="" hidden="">Title</option>
-                                        <option>Mr</option>
-                                        <option>Mrs</option>
-                                        <option>MS</option>
-                                    </select>
-                                </ul>
-                            </li>
-                            <li class="nav-item align-self-center" id="name_item">
-                                <input class="bg-white border rounded border-white shadow-lg" type="text" name="name_input" id="name_input" required="" minlength="3" maxlength="10" placeholder="Name" autocomplete="off">
-                            </li>
-                            <li class="nav-item align-self-center" id="surname_item">
-                                <input class="bg-white border rounded border-white shadow-lg" type="text" name="surname_input" id="surname_input" required="" minlength="2" maxlength="20" placeholder="Surname" autocomplete="off">
-                            </li>
+<div class="container">
+    <div id="img_div">
+        <h1 class="display-3 text-lowercase text-end text-dark" id="motto">
+            " Die with memories, not dreams "
+        </h1>
+        <nav class="navbar navbar-light navbar-expand-md border rounded-pill" id="navbar_bg">
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item align-self-center" id="title_item">
+                        <ul id="title" class="nav-item">
+                            <select id="dropdown_title" class="text-light border rounded-pill navbar-text" autocomplete="off">
+                                <option value="" selected="" hidden="">
+                                    Title
+                                </option>
+                                <option>
+                                    Mr
+                                </option>
+                                <option>
+                                    Mrs
+                                </option>
+                                <option>
+                                    MS
+                                </option>
+                            </select>
                         </ul>
-                        <form id="flightForm" action="/reservation_form/" method="POST">
-                        {% csrf_token %}
-                        <button class="btn btn-primary ms-auto" id="submit_form" type="submit">Submit</button>
-                            </form>
-                    </div>
-            </nav>
-        </div>
+                    </li>
+                    <li class="nav-item align-self-center" id="name_item">
+                        <input class="bg-white border rounded border-white shadow-lg" type="text" name="name_input" id="name_input" required="" minlength="3" maxlength="10" placeholder="Name" autocomplete="off">
+                    </li>
+                    <li class="nav-item align-self-center" id="surname_item">
+                        <input class="bg-white border rounded border-white shadow-lg" type="text" name="surname_input" id="surname_input" required="" minlength="2" maxlength="20" placeholder="Surname" autocomplete="off">
+                    </li>
+                </ul>
+                <form id="flightForm" action="/reservation_form/" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-primary ms-auto" id="submit_form" type="submit">Submit</button>
+                </form>
+            </div>
+        </nav>
     </div>
+</div>
 
 {% endblock content %}

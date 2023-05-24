@@ -1,46 +1,56 @@
 {% extends 'flights/base.html' %}
 {% block content %}
 
-    <div class="container" id="ticket_one_way">
-        <nav class="navbar navbar-light navbar-expand-md" id="flights_passenger">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav">
-                        <li class="nav-item" id="item_name">
-                            <span class="fs-5" id="name">Name</span>
-                        </li>
-                        <li class="nav-item" id="item_surname">
-                            <span class="fs-5" id="surname">Surname</span>
-                        </li>
-                    </ul>
-                </div>
+<div class="container" id="ticket_one_way">
+    <nav class="navbar navbar-light navbar-expand-md" id="flights_passenger">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="item_name">
+                        <span class="fs-5" id="name">
+                            Name
+                        </span>
+                    </li>
+                    <li class="nav-item" id="item_surname">
+                        <span class="fs-5" id="surname">
+                            Surname
+                        </span>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <nav class="navbar navbar-light navbar-expand-md" id="flights_city">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navcol-2">
-                    <ul class="navbar-nav">
-                        <li class="nav-item" id="item_from">
-                            <span class="fs-5" id="ticket_from">Origin Airport</span>
-                        </li>
-                        <li class="nav-item" id="item_to">
-                            <span class="fs-5" id="ticket_to">Destination Airport</span>
-                        </li>
-                    </ul>
-                </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light navbar-expand-md" id="flights_city">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="item_from">
+                        <span class="fs-5" id="ticket_from">
+                            Origin Airport
+                        </span>
+                    </li>
+                    <li class="nav-item" id="item_to">
+                        <span class="fs-5" id="ticket_to">
+                            Destination Airport
+                        </span>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <nav class="navbar navbar-light navbar-expand-md" id="flights_date">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navcol-3">
-                    <ul class="navbar-nav">
-                        <li class="nav-item" id="item_date">
-                            <span class="fs-5" id="ticket_date">DD/MM/YYYY</span>
-                        </li>
-                    </ul>
-                </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light navbar-expand-md" id="flights_date">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navcol-3">
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="item_date">
+                        <span class="fs-5" id="ticket_date">
+                            DD/MM/YYYY
+                        </span>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
+</div>
 
 {% endblock content %}

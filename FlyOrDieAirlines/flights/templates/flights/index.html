@@ -3,38 +3,46 @@
 {% load static %}
 {% now 'Y-m-d' as current_date %}
 
-    <div class="container" id="home_container">
-        <h1 id="slogan">
-            Create Ever-lasting
-            <br/>
-            Memories With Us
-        </h1>
-        <img id="plane_home" src="static/assets/plane2.png">
-    </div>
-    <div class="container" id="search_container">
-        <div id="div_radio">
-            <div class="form-check" id="radio-return">
-                <input class="form-check-input" type="radio" id="return_radio" name="radio_btn" value="show" onclick="CheckRadio(1)" checked>
-                <label class="form-check-label" for="return_radio">Return trip</label>
-            </div>
-            <div class="form-check text-start" id="radio-one">
-                <input class="form-check-input" type="radio" id="oneway_radio" name="radio_btn" autocomplete="off" value="hide" onclick="CheckRadio(2)">
-                <label class="form-check-label" for="oneway_radio">One way</label>
-            </div>
+<div class="container" id="home_container">
+    <h1 id="slogan">
+        Create Ever-lasting
+        <br/>
+        Memories With Us
+    </h1>
+    <img id="plane_home" src="static/assets/plane2.png">
+</div>
+<div class="container" id="search_container">
+    <div id="div_radio">
+        <div class="form-check" id="radio-return">
+            <input class="form-check-input" type="radio" id="return_radio" name="radio_btn" value="show" onclick="CheckRadio(1)" checked>
+            <label class="form-check-label" for="return_radio">
+                Return trip
+            </label>
         </div>
+        <div class="form-check text-start" id="radio-one">
+            <input class="form-check-input" type="radio" id="oneway_radio" name="radio_btn" autocomplete="off" value="hide" onclick="CheckRadio(2)">
+            <label class="form-check-label" for="oneway_radio">
+                One way
+            </label>
+        </div>
+    </div>
 
-        <nav class="navbar navbar-light navbar-expand-md border rounded" id="navbar_search">
-            <div class="container-fluid">
-                <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-3">
-                    <span class="visually-hidden">Toggle navigation</span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <form  action="/search/" method="POST">
+    <nav class="navbar navbar-light navbar-expand-md border rounded" id="navbar_search">
+        <div class="container-fluid">
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-3">
+                <span class="visually-hidden">
+                    Toggle navigation
+                </span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form  action="/search/" method="POST">
                 {% csrf_token %}
                 <div class="collapse navbar-collapse" id="navcol-3">
                     <ul id="select_from" class="nav-item">
                         <select id="select_from_box" name="from_city" class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
-                            <option value="" disable hidden selected>From</option>
+                            <option value="" disable hidden selected>
+                                From
+                            </option>
                             {% for airport in airports %}
                             <option value="{{airport.airport_code}}">
                                 {{ airport.city }}
@@ -44,7 +52,9 @@
                     </ul>
                     <ul id="select_to" class="nav-item">
                         <select id="select_to_box"  name="to_city"  class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
-                            <option value="" disble selected hidden>To</option>
+                            <option value="" disble selected hidden>
+                                To
+                            </option>
                             {% for airport in airports %}
                             <option value="{{airport.airport_code}}">
                                 {{ airport.city }}
@@ -59,31 +69,31 @@
                         <input id="arrival" name = "depature2" class="border rounded-pill border-light d-xxl-flex align-items-xxl-start" type="date" autocomplete="off" min="{{ current_date }}"/>
                     </ul>
                     <ul id="nav_search_btn" class="nav-item">
-                        <button id="search_btn" class="btn btn-primary" type="submit">search</button>
+                        <button id="search_btn" class="btn btn-primary" type="submit">
+                            search
+                        </button>
                     </ul>
                 </div>
-                </form>
-            </div>
-        </nav>
+            </form>
+        </div>
+    </nav>
+</div>
 
-    </div>
-
-    <div id="add">
-        <section id = "add_placholder">
-    <div class="placeholder bg-light border rounded border-light jumbotron py-5 px-4">
-        <h1 class="text-center">
-            We
-            <br/>
-            know
-            <br/>
-            your plans
-            <br/>
-            might change
-            <br/>
-            LAST-MINUTE
-        </h1>
-    </div>
-</section>
-    </div>
-
+<div id="add">
+    <section id = "add_placholder">
+        <div class="placeholder bg-light border rounded border-light jumbotron py-5 px-4">
+            <h1 class="text-center">
+                We
+                <br/>
+                know
+                <br/>
+                your plans
+                <br/>
+                might change
+                <br/>
+                LAST-MINUTE
+            </h1>
+        </div>
+    </section>
+</div>
 {% endblock content %}
