@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models
 
-
 class Airport(models.Model):
     airport_code = models.CharField(max_length=3, primary_key=True)
     airport_name = models.CharField(max_length=50)
@@ -29,6 +28,7 @@ class Aircraft(models.Model):
         return self.aircraft_code + " " +  self.aircraft_code
 
 
+
 class Flight(models.Model):
     flight_id = models.AutoField(primary_key=True)
     airline_code = models.ForeignKey(Airline, on_delete=models.CASCADE)
@@ -46,12 +46,9 @@ class Flight(models.Model):
             raise ValidationError('departure airport cannot be same as the arrival airport.')
 
 
-
 class Reservation(models.Model):
     reservation_id = models.AutoField(primary_key=True)
     flight_id = models.ForeignKey(Flight, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     seat_number = models.CharField(max_length=10)
     date_reserved = models.DateField()
-
-

@@ -12,7 +12,6 @@ from django.db.models.functions import TruncDate
 
 def	home(request):
     airports = Airport.objects.all()
-
     return render(request, 'flights/index.html', {'airports': airports})
 
 def reservation_page(request):
@@ -67,18 +66,14 @@ def search(request):
 
 
     if request.method == 'POST' :
-        print(request.POST)
         from_city = request.POST.get('from_city')
         to_city = request.POST.get('to_city')
         departure_datetime = datetime.strptime(request.POST.get('depature1'), '%Y-%m-%d')
         departure_date = datetime.date(departure_datetime)
-        print(from_city)
-        print(to_city)
-        print(departure_date)
+
         if len(request.POST) == 5:
             return_datetime = datetime.strptime(request.POST.get('depature2'), '%Y-%m-%d')
             return_date = return_datetime
-            print("weszlo 5")
             flights = Flight.objects.filter(
                 departure_airport_code=from_city,
                 arrival_airport_code=to_city,
@@ -91,7 +86,6 @@ def search(request):
             )
             return render(request, 'flights/search.html', {'flights': flights, 'return_flights': return_flights})
         elif len(request.POST) == 4:
-            print("weszlo 4")
 
             flights = Flight.objects.filter(
                 departure_airport_code=from_city,
@@ -99,8 +93,6 @@ def search(request):
                 departure_time__date=departure_date,
             )
             return render(request, 'flights/search.html', {'flights': flights})
-
-        print(len(request.POST))
 
     return render(request, 'flights/search.html')
 
@@ -121,8 +113,6 @@ def make_reservation(request):
         returnFlight = request.POST.get('selectedReturnFlightId')
         request.session['flight'] = flight
         request.session['returnFlight'] = returnFlight
-        print(flight)
-        print(returnFlight)
         return redirect('flights:reservation_form')
     return render(request, 'flights/reservation_form.html')
 
@@ -134,8 +124,6 @@ def reservation_form(request):
         returnFlight = request.session.get('returnFlight')
         # flight_1 = Flight.objects.get(id=flight)
         # flight_2 = Flight.objects.get(id=returnFlight)
-        print(flight + "log")
-        print(returnFlight)
         # name = form.cleaned_data['name']
         # surname = form.cleaned_data['surname']
         # reservation_1 = Reservation(name=name, surname=surname, flight_1=flight_1, flight_2=flight_2)

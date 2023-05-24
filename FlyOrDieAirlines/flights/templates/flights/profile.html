@@ -1,41 +1,42 @@
 {% extends 'flights/base.html' %}
 {% block content %}
 
-    <h1 id="hello_user">Hello, {{ user.username }}</h1>
-    {% if reservations %}
-    {% for reservation in reservations %}
-    <div class="container_flight_profile" id="istheflight_profile_{{ flight.flight_id}}">
+<h1 id="hello_user">
+    Hello, {{ user.username }}
+</h1>
+{% if reservations %}
+{% for reservation in reservations %}
+<div class="container_flight_profile" id="istheflight_profile_{{ flight.flight_id}}">
     <form method="POST" action="{% url 'flights:deleteReservation' reservation.reservation_id %}">
         {% csrf_token %}
         <button class="btn btn-primary" id="istheflight_btn_profile" type="submit">Delete</button>
     </form>
-        <div class="row" id="date_time_table_profile">
-            <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="departure_date_time_col_profile">
-                <span id="departure_date_time_profile">
-                    {{ reservation.flight_id.departure_time }}
-
-                </span>
-            </div>
-            <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="arrival_date_time_col_profile">
-                <span id="arrival_date_time_profile">
-                    {{ reservation.flight_id.arrival_time }}
-
-                </span>
-            </div>
+    <div class="row" id="date_time_table_profile">
+        <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="departure_date_time_col_profile">
+            <span id="departure_date_time_profile">
+                {{ reservation.flight_id.departure_time }}
+            </span>
         </div>
-        <div class="row" id="airport_table_profile" style="margin-top: 46px;">
-            <div class="col-sm-6 col-xxl-6 d-xxl-flex justify-content-xxl-center" id="departure_airport_col">
-                <span id="departure_airport">
-                    {{ reservation.flight_id.departure_airport_code }}
-                </span>
-            </div>
-            <div class="col-sm-6 d-xxl-flex justify-content-xxl-center" id="arrival_ariport_col">
-                <span id="arrival_airport">
-                    {{ reservation.flight_id.arrival_airport_code }}
-                </span>
-            </div>
+        <div class="col-sm-6 col-xxl-5 d-xxl-flex justify-content-xxl-center" id="arrival_date_time_col_profile">
+            <span id="arrival_date_time_profile">
+                {{ reservation.flight_id.arrival_time }}
+            </span>
         </div>
     </div>
+    <div class="row" id="airport_table_profile" style="margin-top: 46px;">
+        <div class="col-sm-6 col-xxl-6 d-xxl-flex justify-content-xxl-center" id="departure_airport_col">
+            <span id="departure_airport">
+                {{ reservation.flight_id.departure_airport_code }}
+            </span>
+        </div>
+        <div class="col-sm-6 d-xxl-flex justify-content-xxl-center" id="arrival_ariport_col">
+            <span id="arrival_airport">
+                {{ reservation.flight_id.arrival_airport_code }}
+            </span>
+        </div>
+    </div>
+</div>
+
 {% endfor %}
-        {% endif %}
+{% endif %}
 {% endblock %}
