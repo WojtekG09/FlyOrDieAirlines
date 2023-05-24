@@ -1,9 +1,25 @@
 {% extends 'flights/base.html' %}
 {% block content %}
+
+<div class="container" style="max-width: 100%">
+    <div class="row">
+        <div class="col-md-6" id="to_column_title">
+            <h1 id="to_title">
+                From Warsaw to Bali
+            </h1>
+        </div>
+        <div class="col-md-6" id="return_column_title">
+            <h1 id="return_title">
+                From Bali to Warsaw
+            </h1>
+        </div>
+    </div>
+</div>
+
 {% if flights %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6 ">
+        <div class="col-md-6" id="to_flight">
             {% for flight in flights %}
             <div class="container_flight" id="istheflight_{{ flight.flight_id}}">
                 <button class="btn btn-primary" id="istheflight_btn_{{ flight.flight_id}}" onclick="TicketPicker(this)" type="button">
@@ -41,11 +57,15 @@
         </div>
 <!--         <input type="hidden" name="selected_flight_id" id="selectedFlightId">-->
         {% else %}
-        <p>No flights found.</p>
+        <div id="to_flight_noflight" class="col-md-6">
+            <p id="no_flights">
+                No flights found.
+            </p>
+        </div>
         {% endif %}
 
         {% if return_flights %}
-        <div class="col-md-6">
+        <div class="col-md-6" id="return_flight">
             {% for flight in return_flights %}
             <div class="container_flight_return" id="istheflight_return_{{ flight.flight_id}}">
                 <button class="btn btn-primary" id="istheflight_btn_return_{{ flight.flight_id}}" onclick="ReturnTicketPicker(this)" type="submit">
@@ -82,17 +102,25 @@
             {% endfor %}
 <!--             <input type="hidden" name="selected_flight_id" id="selectedReturnFlightId">-->
             {% else %}
-            <p id="no_flights">No flights found.</p>
+            <div id="return_flight_noflight" class="col-md-6">
+                <p id="no_flights_return">
+                    No flights found.
+                </p>
+            </div>
             {% endif %}
 
         </div>
     </div>
 </div>
 <form id="flightForm" action="/make_reservation/" method="POST">
-  {% csrf_token %}
-  <input type="hidden" value="" name="selected_flight_id" id="selectedFlightId">
-    <input type="hidden" value="" name="selectedReturnFlightId" id="selectedReturnFlightId">
-  <button id="next" class="btn btn-primary" type="button">Next</button>
+    {% csrf_token %}
+<!--    <input type="hidden" value="" name="selected_flight_id" id="selectedFlightId">-->
+    <input value="" name="selected_flight_id" id="selectedFlightId">
+<!--    <input type="hidden" value="" name="selectedReturnFlightId" id="selectedReturnFlightId">-->
+    <input value="" name="selectedReturnFlightId" id="selectedReturnFlightId">
+    <button id="next" class="btn btn-primary" type="button" onclick="NextBtn()">
+        Next
+    </button>
 </form>
 
 {% endblock content %}
