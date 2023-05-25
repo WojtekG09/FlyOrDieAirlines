@@ -9,12 +9,7 @@
   /*margin-left: 50px;*/
   height: 100px;
   width: 830px;
-  /*width: 50%;*/
 }
-
-/*.container_flight_return {*/
-/*  margin-left: 50%;*/
-/*}*/
 
 #istheflight_btn, #istheflight_btn_return, button[id^="istheflight_btn_"] {
   margin-left: 601px;
@@ -56,32 +51,17 @@
   padding-right: 30px;
   margin-left: 47%;
   margin-right: 47%;
-  /*display: none;*/
 }
 
 #no_flights, #no_flights_return {
   margin-left: 35px;
 }
 
-/*#to_column, #to_column_noflight {*/
-/*  width: 50%;*/
-/*}*/
-
-/*#return_column, #return_column_noflight {*/
-/*  width: 50%;*/
-/*  margin-left: 50%;*/
-/*  margin-top: -8%;*/
-/*}*/
-
 #to_title, #return_title {
   font-family: 'League Spartan';
   font-weight: 700;
   padding: 20px;
 }
-
-/*#return_flight {*/
-/*  margin-left: 50%;*/
-/*}*/
 
 #flightForm {
   width: 100%;

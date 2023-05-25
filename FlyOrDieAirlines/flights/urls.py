@@ -15,7 +15,6 @@ urlpatterns = [
     path("about/", views.about_page, name="about"),
     path("profile/", views.profile_page, name="profile"),
     path('reservation/delete/<int:reservation_id>/', views.delete_reservation, name='deleteReservation'),
-
 ]
 
 
