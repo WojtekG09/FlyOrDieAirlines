@@ -1,3 +1,3 @@
 # FlyOrDieAirlines
 
-Projekt dyplomowy rezeracji biletów lotniczych
+Projekt dyplomowy rezerwacji biletów lotniczych
