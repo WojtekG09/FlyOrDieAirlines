@@ -1,6 +1,6 @@
 /* summary.html */
 
-#ticket_one_way {
+#ticket_one_way, #ticket_one_way_return {
   background: url("ticket_template.PNG");
   background-size: contain;
   padding: 290px;
@@ -8,25 +8,25 @@
   height: 300px;
 }
 
-#flights_passenger {
+#flights_passenger, #flights_passenger_return {
   margin-top: -84px;
   margin-left: -237px;
 }
 
-#item_name {
+#item_name, #item_name_return {
   margin-right: 25px;
 }
 
-#flights_city {
+#flights_city, #flights_city_return {
   margin-left: -236px;
   margin-top: 55px;
 }
 
-#item_from {
+#item_from, #item_from_return {
   margin-right: 345px;
 }
 
-#flights_date {
+#flights_date, #flights_date_return {
   margin-left: -237px;
   padding-top: 65px;
 }

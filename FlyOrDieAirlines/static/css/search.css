@@ -2,7 +2,7 @@
 
 .container_flight, .container_flight_return {
   background: url("istheticket.PNG");
-  background-size: contain;
+  background-size: cover;
   padding: 80px;
   padding-bottom: 70px;
   margin-top: 30px;

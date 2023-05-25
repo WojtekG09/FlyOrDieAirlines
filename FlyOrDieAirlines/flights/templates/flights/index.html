@@ -12,6 +12,7 @@
         <img id="plane_home" src="static/assets/plane2.png">
     </div>
     <div class="container" id="search_container">
+        <form  action="/search/" method="POST">
         <div id="div_radio">
             <div class="form-check" id="radio-return">
                 <input class="form-check-input" type="radio" id="return_radio" name="radio_btn" value="show" onclick="CheckRadio(1)" checked>
@@ -29,7 +30,7 @@
                     <span class="visually-hidden">Toggle navigation</span>
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <form  action="/search/" method="POST">
+
                 {% csrf_token %}
                 <div class="collapse navbar-collapse" id="navcol-3">
                     <ul id="select_from" class="nav-item">
@@ -44,7 +45,7 @@
                     </ul>
                     <ul id="select_to" class="nav-item">
                         <select id="select_to_box"  name="to_city"  class="text-dark bg-light border rounded-pill border-light navbar-text" onchange="CheckDropDowns(this)" autocomplete="off">
-                            <option value="" disble selected hidden>To</option>
+                            <option value="" disable selected hidden>To</option>
                             {% for airport in airports %}
                             <option value="{{airport.airport_code}}">
                                 {{ airport.city }}
@@ -62,10 +63,10 @@
                         <button id="search_btn" class="btn btn-primary" type="submit">search</button>
                     </ul>
                 </div>
-                </form>
+
             </div>
         </nav>
-
+  </form>
     </div>
 
     <div id="add">

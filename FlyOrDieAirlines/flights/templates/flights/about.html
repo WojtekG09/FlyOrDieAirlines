@@ -2,71 +2,71 @@
 {% load static %}
 {% block content %}
 
-    <div class="container">
-        <div class="carousel slide" data-bs-ride="carousel" id="carousel-1" style="height: 600px;">
-            <div class="carousel-inner h-100">
-                <div class="carousel-item active h-100">
-                    <img class="w-100 d-block position-absolute h-100 fit-cover" src="{% static 'assets/wojtek.jpg' %}" alt="Slide Image" style="z-index: -1;padding-left: 428px;">
-                    <div class="container d-flex flex-column justify-content-center h-100">
-                        <div class="row">
-                            <div class="col-md-6 col-xl-4 offset-md-2">
-                                <div style="max-width: 350px;background: rgba(255,255,255,0);margin-left: -132px;">
-                                    <h1 class="text-uppercase fw-bold">
-                                        Wojciech Guzek
-                                    </h1>
-                                    <p class="my-3">
-                                        <em>
-                                            "Getting high is part of my job"
-                                        </em>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item h-100">
-                    <img class="w-100 d-block position-absolute h-100 fit-cover" src="{% static 'assets/kalina.jpeg' %}" alt="Slide Image" style="z-index: -1;padding-left: 428px;">
-                    <div class="container d-flex flex-column justify-content-center h-100">
-                        <div class="row">
-                            <div class="col-md-6 col-xl-4 offset-md-2">
-                                <div style="max-width: 350px;background: rgba(255,255,255,0);margin-left: -132px;">
-                                    <h1 class="text-uppercase fw-bold">
-                                        Kalina Pilc
-                                    </h1>
-                                    <p class="my-3">
-                                        <em>
-                                            Things I hate about my job?
-                                            <br />
-                                            1. Stupid questions
-                                            <br />
-                                            2. Passengers
-                                            <br />
-                                            3. Stupid questions from passengers"
-                                        </em>
-                                    </p>
-                                </div>
+<div class="container">
+    <div class="carousel slide" data-bs-ride="carousel" id="carousel-1" style="height: 600px;">
+        <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+                <img class="w-100 d-block position-absolute h-100 fit-cover" src="{% static 'assets/wojtek.jpg' %}" alt="Slide Image" style="z-index: -1;padding-left: 428px;">
+                <div class="container d-flex flex-column justify-content-center h-100">
+                    <div class="row">
+                        <div class="col-md-6 col-xl-4 offset-md-2">
+                            <div style="max-width: 350px;background: rgba(255,255,255,0);margin-left: -132px;">
+                                <h1 class="text-uppercase fw-bold">
+                                    Wojciech Guzek
+                                </h1>
+                                <p class="my-3">
+                                    <em>
+                                        "Getting high is part of my job"
+                                    </em>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <a class="carousel-control-prev" id="previous" href="#carousel-1" role="button" data-bs-slide="prev">
+            <div class="carousel-item h-100">
+                <img class="w-100 d-block position-absolute h-100 fit-cover" src="{% static 'assets/kalina.jpeg' %}" alt="Slide Image" style="z-index: -1;padding-left: 428px;">
+                <div class="container d-flex flex-column justify-content-center h-100">
+                    <div class="row">
+                        <div class="col-md-6 col-xl-4 offset-md-2">
+                            <div style="max-width: 350px;background: rgba(255,255,255,0);margin-left: -132px;">
+                                <h1 class="text-uppercase fw-bold">
+                                    Kalina Pilc
+                                </h1>
+                                <p class="my-3">
+                                    <em>
+                                        Things I hate about my job?
+                                        <br />
+                                        1. Stupid questions
+                                        <br />
+                                        2. Passengers
+                                        <br />
+                                        3. Stupid questions from passengers"
+                                    </em>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a class="carousel-control-prev" id="previous" href="#carousel-1" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
                 <span class="visually-hidden">Previous</span>
             </a>
-                <a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next" style="margin-left: -140px;padding-left: 140px;">
-                    <span class="carousel-control-next-icon"></span>
-                    <span class="visually-hidden">
+            <a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next" style="margin-left: -140px;padding-left: 140px;">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">
                     Next
                 </span>
-                </a>
-            </div>
-            <ol class="carousel-indicators">
-                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
-            </ol>
+            </a>
         </div>
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+        </ol>
     </div>
+</div>
 
 {% endblock content %}
