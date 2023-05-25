@@ -3,13 +3,11 @@
 
 <div class="container" style="max-width: 100%">
     <div class="row">
-        {% if flights %}
         <div class="col-md-6" id="to_column_title">
             <h1 id="to_title">
                 From {{ flights.0.departure_airport_code.airport_name }} to {{ flights.0.arrival_airport_code.airport_name }}
             </h1>
         </div>
-        {% endif %}
         <div class="col-md-6" id="return_column_title">
             <h1 id="return_title">
                 From {{ return_flights.0.departure_airport_code.airport_name }} to {{ return_flights.0.arrival_airport_code.airport_name }}
@@ -19,7 +17,6 @@
 </div>
 
 {% if flights %}
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6" id="to_flight">
@@ -58,7 +55,6 @@
             </div>
             {% endfor %}
         </div>
-<!--         <input type="hidden" name="selected_flight_id" id="selectedFlightId">-->
         {% else %}
         <div id="to_flight_noflight" class="col-md-6">
             <p id="no_flights">
@@ -103,7 +99,6 @@
                 </div>
             </div>
             {% endfor %}
-<!--             <input type="hidden" name="selected_flight_id" id="selectedReturnFlightId">-->
             {% else %}
             <div id="return_flight_noflight" class="col-md-6">
                 <p id="no_flights_return">
@@ -111,16 +106,13 @@
                 </p>
             </div>
             {% endif %}
-
         </div>
     </div>
 </div>
 <form id="flightForm" action="/make_reservation/" method="POST">
     {% csrf_token %}
-<!--    <input type="hidden" value="" name="selected_flight_id" id="selectedFlightId">-->
-    <input value="" name="selected_flight_id" id="selectedFlightId">
-<!--    <input type="hidden" value="" name="selectedReturnFlightId" id="selectedReturnFlightId">-->
-    <input value="" name="selectedReturnFlightId" id="selectedReturnFlightId">
+    <input type="hidden" value="" name="selected_flight_id" id="selectedFlightId">
+    <input type="hidden" value="" name="selectedReturnFlightId" id="selectedReturnFlightId">
     <button id="next" class="btn btn-primary" type="button" onclick="NextBtn()">
         Next
     </button>
