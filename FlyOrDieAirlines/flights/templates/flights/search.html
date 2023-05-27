@@ -111,10 +111,8 @@
 </div>
 <form id="flightForm" action="/make_reservation/" method="POST">
     {% csrf_token %}
-<!--    <input type="hidden" value="" name="selected_flight_id" id="selectedFlightId">-->
-<!--    <input type="hidden" value="" name="selectedReturnFlightId" id="selectedReturnFlightId">-->
-    <input value="" name="selected_flight_id" id="selectedFlightId">
-    <input value="" name="selectedReturnFlightId" id="selectedReturnFlightId">
+    <input type="hidden" value="" name="selected_flight_id" id="selectedFlightId">
+    <input type="hidden" value="" name="selectedReturnFlightId" id="selectedReturnFlightId">
     <button id="next" class="btn btn-primary" type="button" onclick="NextBtn()">
         Next
     </button>
