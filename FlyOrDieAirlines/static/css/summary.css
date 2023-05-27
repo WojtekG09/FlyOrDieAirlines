@@ -31,3 +31,7 @@
   padding-top: 65px;
 }
 
+#ticket_date_arrival, #ticket_date_return2 {
+  margin-left: 300px;
+}
+
