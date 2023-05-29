@@ -5,18 +5,22 @@ function TicketPicker(button)
     var divs = document.querySelectorAll('.container_flight');
     divs.forEach(function(div)
     {
-      if (div !== parentDiv)
-      {
-        if (div.style.display === "none")
+        if (div !== parentDiv)
         {
-          div.style.display = "block";
-          document.getElementById('selectedFlightId').value = "";
+            if (div.style.display === "none")
+            {
+            div.style.display = "block";
+            document.getElementById('selectedFlightId').value = "";
+            }
+            else
+            {
+            div.style.display = "none";
+            document.getElementById('selectedFlightId').value = flightId;
+            }
         }
         else
         {
-          div.style.display = "none";
-          document.getElementById('selectedFlightId').value = flightId;
+            document.getElementById('selectedFlightId').value = flightId;
         }
-      }
     });
-  }
+}
