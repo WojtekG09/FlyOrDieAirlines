@@ -67,6 +67,7 @@ def search(request):
         from_city = request.POST.get('from_city')
         to_city = request.POST.get('to_city')
         radio_btn = request.POST.get('radio_btn')
+        request.session['radio_btn'] = radio_btn
         departure_datetime = datetime.strptime(request.POST.get('depature1'), '%Y-%m-%d')
         departure_date = datetime.date(departure_datetime)
         if request.POST.get('depature1') and request.POST.get('depature2'):
@@ -89,6 +90,7 @@ def search(request):
                 arrival_airport_code=to_city,
                 departure_time__date=departure_date,
             )
+
             return render(request, 'flights/search.html', {'flights': flights, 'radio_btn': radio_btn})
     return render(request, 'flights/search.html')
 
@@ -115,15 +117,21 @@ def make_reservation(request):
 def reservation_form(request):
     if request.method == 'POST':
         flight = get_object_or_404(Flight, pk=request.session.get('flight'))
-        returnFlight = get_object_or_404(Flight, pk=request.session.get('returnFlight'))
+        radio_btn = request.session.get('radio_btn')
         user = request.user
         date_reserved = datetime.now()
         name = request.POST.get('name_input')
         surname = request.POST.get('surname_input')
         reservation = Reservation(name=name, surname=surname, user=user, flight_id=flight, date_reserved=datetime.now())
         reservation.save()
-        reservationReturn = Reservation(name=name, surname=surname, user=user, flight_id=returnFlight, date_reserved=datetime.now())
-        reservationReturn.save()
-        # return redirect('flights:summary', {'reservation': reservation})
-        return render(request, 'flights/summary.html', {'reservation': reservation, 'reservationReturn': reservationReturn})
+        print(radio_btn)
+        if radio_btn == "show":
+            returnFlight = get_object_or_404(Flight, pk=request.session.get('returnFlight'))
+            print("test1")
+            reservationReturn = Reservation(name=name, surname=surname, user=user, flight_id=returnFlight, date_reserved=datetime.now())
+            reservationReturn.save()
+            return render(request, 'flights/summary.html', {'reservation': reservation, 'reservationReturn': reservationReturn})
+
+        elif radio_btn == "hide" :
+            return render(request, 'flights/summary.html',{'reservation': reservation})
     return render(request, 'flights/reservation_form.html')
